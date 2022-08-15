@@ -1,3 +1,4 @@
+#Programas para entregar:
 #1 - Faça um programa que diga se o primeiro e o último ítens de uma lista são iguais(deve funcionar para qualquer lista, ou seja, a quatidade de ítens não é fixa)
 #2 - Faça um programa que diga o maior divisor primo de um número dado como input
 #3 - Diga se um número qualquer é um palíndromo
@@ -60,9 +61,7 @@ def programa4():
 def crivoEratóstenes(max):
 
     numeros = [True] * (max+1)
-
     numeros[0] = numeros[1] = False
-
     primos = []
 
     for index, value in enumerate(numeros):

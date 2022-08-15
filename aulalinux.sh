@@ -1,4 +1,5 @@
 #!/bin/bash
+#Sintaxe Basica para SHELL
 
 echo "Enter two numbers: "
 
