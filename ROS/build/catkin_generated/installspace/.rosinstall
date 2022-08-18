@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /root/PS/ROS/install/setup.sh
