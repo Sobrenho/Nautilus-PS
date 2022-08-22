@@ -15,13 +15,13 @@ solarsystem:
 
         natural_satellites:
             -   name: "Moon"
-                planet_adjacent: "Earth"
+                adjacent_planet: "Earth"
 
             -   name: "Europa"
-                planet_adjacent: "Jupiter"
+                adjacent_planet: "Jupiter"
           
             -   name: "Phobos"
-                planet_adjacent: "Mars"
+                adjacent_planet: "Mars"
           
 
     rate: 15

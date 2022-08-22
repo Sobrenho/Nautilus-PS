@@ -9,7 +9,7 @@ import geometry_msgs.msg
 class Broadcaster:
   
     def __init__(self, node):
-        rospy.init_node(node, anonymous=True)
+        rospy.init_node("solar_system_"+node, anonymous=True)
         self.bc = tf2_ros.TransformBroadcaster()        
   
     def startBroadcast(self, planet_id, natSat_id):
