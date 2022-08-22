@@ -1,37 +1,28 @@
 solarsystem:
     celestial_bodies:
+        stars:            
+            -   name: "Sun"
 
-      -   name: "Sun"
-          label: "Star"
-          label_id: 1
-      
-      -   name: "Earth"
-          label: "Planet"
-          label_id: 2
-          orbit_radius: 2
-    
-      -   name: "Moon"
-          label: "Natural Satellite"
-          label_id: 3
+        planets:
+            -   name: "Earth"
+                orbit_radius: 4
+
+            -   name: "Jupiter"          
+                orbit_radius: 9
+
+            -   name: "Mars"
+                orbit_radius: 6
+
+        natural_satellites:
+            -   name: "Moon"
+                planet_adjacent: "Earth"
+
+            -   name: "Europa"
+                planet_adjacent: "Jupiter"
           
-
-      -   name: "Jupiter"
-          label: "Planet"
-          label_id: 2
-          orbit_radius: 5
-
-      -   name: "Europa"
-          label: "Natural Satellite"
-          label_id: 3
-      
-      -   name: "Mars"
-          label: "Planet"
-          label_id: 2
-          orbit_radius: 3
-
-      -   name: "Phobos"
-          label: "Natural Satellite"
-          label_id: 3
+            -   name: "Phobos"
+                planet_adjacent: "Mars"
+          
 
     rate: 15
       

@@ -13,14 +13,13 @@ class Broadcaster:
         self.bc = tf2_ros.TransformBroadcaster()        
   
     def startBroadcast(self, planet_id, natSat_id):
-        
         t = geometry_msgs.msg.TransformStamped()
         t2 = geometry_msgs.msg.TransformStamped()
 
-        paramNatSat = rospy.get_param("/solarsystem/celestial_bodies")[natSat_id]
-        paramPlanet = rospy.get_param("/solarsystem/celestial_bodies")[planet_id]
-        
-        t.header.frame_id = rospy.get_param("/solarsystem/celestial_bodies")[0]["name"]
+        paramNatSat = rospy.get_param("/solarsystem/celestial_bodies/natural_satellites")[natSat_id]
+        paramPlanet = rospy.get_param("/solarsystem/celestial_bodies/planets")[planet_id]
+
+        t.header.frame_id = rospy.get_param("/solarsystem/celestial_bodies/stars")[0]["name"]
         t.child_frame_id  = paramPlanet["name"]
 
         t2.header.frame_id = paramPlanet["name"]
@@ -29,7 +28,6 @@ class Broadcaster:
         rate = rospy.Rate(rospy.get_param("/solarsystem/rate"))
         while not rospy.is_shutdown():
             theta = rospy.Time.now().to_sec() * math.pi
-
 
             #A velocidade da órbita é maior em corpos mais próximos do Sol
             t.header.stamp = rospy.Time.now()
@@ -44,8 +42,8 @@ class Broadcaster:
 
             #A relação com o raio de órbita abaixo foi adicionada apenas para tornar o sistema mais assimétrico
             t2.header.stamp = rospy.Time.now()
-            t2.transform.translation.x = math.sin((paramPlanet["orbit_radius"]/2)*theta)
-            t2.transform.translation.y = math.cos((paramPlanet["orbit_radius"]/2)*theta) 
+            t2.transform.translation.x = math.sin((paramPlanet["orbit_radius"]/3.5)*theta)
+            t2.transform.translation.y = math.cos((paramPlanet["orbit_radius"]/3.5)*theta) 
             t2.transform.translation.z = 0
             
             t2.transform.rotation.x  = 0

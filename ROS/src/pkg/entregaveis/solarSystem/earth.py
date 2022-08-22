@@ -6,7 +6,7 @@ from broadcasterTF import Broadcaster
 if __name__ == '__main__':
     try:
         a = Broadcaster("earth")
-        a.startBroadcast(1,2)
+        a.startBroadcast(0,0)
         
     except rospy.ROSInterruptException :
         pass
