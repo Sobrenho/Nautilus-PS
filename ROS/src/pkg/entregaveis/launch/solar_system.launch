@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <launch>
-    <rosparam command="load" file="$(find pkg)/param/param.yaml"/>
+    <rosparam command="load" file="$(find pkg)/entregaveis/param/param.yaml"/>
     <node pkg="pkg" type="earth.py" name="earth" output="screen"/>
     <node pkg="pkg" type="jupiter.py" name="jupiter" output="screen"/>
     <node pkg="pkg" type="mars.py" name="mars" output="screen"/>
